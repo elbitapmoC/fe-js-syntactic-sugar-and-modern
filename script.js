@@ -9,9 +9,9 @@ const person = {
 }
 // OLD
 // const doubled = arr.map(double);
-function double(num){
-    return num *2;
-}
+// function double(num){
+//     return num *2;
+// }
 
 // NEW
 // With one parameter, no need for () around num.

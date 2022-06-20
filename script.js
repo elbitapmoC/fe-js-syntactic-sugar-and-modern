@@ -83,11 +83,24 @@
 // logParams(1,234,567,89); //look at function
 
 // ----- Null Coalescing -----
-const drink = 'Olipop';
+// const drink = 'Olipop';
 
 // OLD
 // const defaultDrink = drink != null ? drink : 'Water';
 
 // NEW
-const defaultDrink = drink ?? 'Water';
-console.log(`I'd like some ${defaultDrink} to drink please.`);
+// const defaultDrink = drink ?? 'Water';
+// console.log(`I'd like some ${defaultDrink} to drink please.`);
+
+// ----- Optional Chaining + Null Coalescing -----
+const stomach = {
+    fruit: {
+        mango: true,
+        strawberry: true,
+        raspberry: true,
+        orange: false,
+    }
+}
+// check to see IF stomach is empty..
+console.log(stomach?.fruit?.kiwi); // undefined
+console.log(stomach?.fruit?.peach ?? 'Avacado'); // Avacado, b/c peach doesn't exist

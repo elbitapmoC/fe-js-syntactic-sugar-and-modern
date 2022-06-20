@@ -1,16 +1,23 @@
 // -----Arrow functions-----
-// const arr = [1,2,3,4,5];
+const arr = [1,2,3,4,5];
+const arr2 = [6,7,8,9,10,11,12];
+const person = {
+    company: 'President',
+    userName: 'AK',
+    description: ['Sojourner', 'Foodie', 'Developer', 'Lover', 'Minimalist @ heart..'],
+    favNum: 12
+}
 // OLD
 // const doubled = arr.map(double);
-// function double(num){
-//     return num *2;
-// }
+function double(num){
+    return num *2;
+}
 
 // NEW
 // With one parameter, no need for () around num.
 // implicitly returns num*2;
-// const doubled = arr.map(num => num*2);
-// console.log(doubled);
+const doubled = arr.map(num => num*2);
+console.log(doubled);
 
 // ----- Destructuring Assignment | ARRAY -----
 // OLD
@@ -27,22 +34,16 @@
 // console.log(arr);
 
 // ----- Destructuring Assignment | OBJECT -----
-// const person = {
-//     company: 'President',
-//     userName: 'AK',
-//     description: ['Sojourner', 'Foodie', 'Developer', 'Lover', 'Minimalist @ heart..'],
-//     favNum: 12
-// }
 
 // OLD
 // console.log(person.company);
 
 // NEW
 // hungry doesn't exist above, b/c of that, hungry will be created in the object and have a default val of true
-// const {company, userName: nickname, hungry=true, ...rest} = person;
-// console.log(company, nickname);
-// console.log(hungry); // Default value.
-// console.log(rest );
+const {company, userName: nickname, hungry=true, ...rest} = person;
+console.log(company, nickname);
+console.log(hungry); // Default value.
+console.log(rest );
 
 // OLD
 // function printName(person){
@@ -51,28 +52,26 @@
 
 // NEW
 // Use {} to select on the necessery values 
-// function printName({userName}){
-//     console.log(userName);
-// }
+function printName({userName}){
+    console.log(userName);
+}
 // Pass in object
-// printName(person);
+printName(person);
 
 // ----- Spread Operator -----
-const arr = [1,2,3,4,5];
-const arr2 = [6,7,8,9,10,11,12];
 
 // because this is only 2 variables, the rest of the array that's passed in is dropped.
-// function add(x,y) {
-//     console.log(x+y);
-// }
+function add(x,y) {
+    console.log(x+y);
+}
 // OLD
 // add(arr[0],arr[1]);
 
 // NEW
-// add(...arr); //3
+add(...arr); //3
 
-// const combined = [0, ...arr, ...arr2];
-// console.log(combined);
+const combined = [0, ...arr, ...arr2];
+console.log(combined);
 
 // The rest of the values passed in, stored inside rest array variable.
 function logParams(x, ...rest){

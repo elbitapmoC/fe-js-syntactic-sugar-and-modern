@@ -27,12 +27,12 @@
 // console.log(arr);
 
 // ----- Destructuring Assignment | OBJECT -----
-const person = {
-    company: 'President',
-    userName: 'AK',
-    description: ['Sojourner', 'Foodie', 'Developer', 'Lover', 'Minimalist @ heart..'],
-    favNum: 12
-}
+// const person = {
+//     company: 'President',
+//     userName: 'AK',
+//     description: ['Sojourner', 'Foodie', 'Developer', 'Lover', 'Minimalist @ heart..'],
+//     favNum: 12
+// }
 
 // OLD
 // console.log(person.company);
@@ -50,7 +50,34 @@ const person = {
 // }
 
 // NEW
-function printName({userName}){
-    console.log(userName);
+// Use {} to select on the necessery values 
+// function printName({userName}){
+//     console.log(userName);
+// }
+// Pass in object
+// printName(person);
+
+// ----- Spread Operator -----
+const arr = [1,2,3,4,5];
+const arr2 = [6,7,8,9,10,11,12];
+
+// because this is only 2 variables, the rest of the array that's passed in is dropped.
+// function add(x,y) {
+//     console.log(x+y);
+// }
+// OLD
+// add(arr[0],arr[1]);
+
+// NEW
+// add(...arr); //3
+
+// const combined = [0, ...arr, ...arr2];
+// console.log(combined);
+
+// The rest of the values passed in, stored inside rest array variable.
+function logParams(x, ...rest){
+    console.log(x);
+    console.log(rest);
 }
-printName(person);
+
+logParams(1,234,567,89); //look at function
